@@ -9,7 +9,7 @@ tags: [functional, javascript]
 
 My friend and former (and future?) colleague, Paul Grenier, recently posted on the topic of [function composition](http://autosponge.github.io/blog/2013/02/09/variadic-composition-without-recursion/) in Javascript. Paul takes the angle that we can avoid some of the performance problems associated with the functional style (although at the cost of some maintainability--constructed functions are not the most pleasant thing to debug).
 
-We use a simlar approach to "memoizing" functions by arity in [Ramda](https://github.com/CrossEye/ramda) that Paul recommends (cf. `nAry` function). Our implementation of a variadic `compose` function is straightforward:
+We use a similar approach to "memoizing" functions by arity in [Ramda](https://github.com/CrossEye/ramda) that Paul recommends (cf. `nAry` function). Our implementation of a variadic `compose` function is straightforward:
 
     var compose = function() { 
       var fns = slice(arguments);
@@ -27,7 +27,7 @@ What I'd like to do is compose `map` and `pick` to give me a function that would
     var project = compose(map, pick);
     var selected = project(attrs, objects);
 
-At present, this that doesn't work in Ramda because `pick` comes out of `curry` not knowing what its arity is. You can work around that like this, but isn't as elegant:
+At present, this doesn't work in Ramda because `pick` comes out of `curry` not knowing what its arity is. You can work around that like this, but isn't as elegant:
 
     var project = compose(map, pick);
     var selected = project(attrs)(objects);

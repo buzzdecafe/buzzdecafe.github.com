@@ -213,7 +213,9 @@ ul.compact li a {
 	display: block;
 	font-weight: normal;
 }
-
+#header a.titlelink {
+  font-variant: normal;
+}
 #header ul {
 	position: absolute;
 	top: 0;
@@ -546,4 +548,11 @@ img.maruku-png { }
 	border:1px solid #4C964D;
 	color:#FFF;
 }
-
+/*===============================================*/
+/* mike's customizations                         */
+/*===============================================*/
+.mu-logo {
+  width: 200px;
+  height: 264px;
+  float: right;
+}

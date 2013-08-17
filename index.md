@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "&mu;"
-tagline: 
+tagline: Does a blog have Buddha nature?
 ---
 {% include JB/setup %}
 

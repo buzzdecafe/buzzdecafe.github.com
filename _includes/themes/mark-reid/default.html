@@ -44,9 +44,12 @@
     </ul>
   </div>
 
-  <div id="mu-logo" class="mu-logo">
-    <img src="{{ ASSET_PATH }}/img/mucow.png" height="264" width="200" alt="&mu;"  />
-  </div>
+  {% if page.title == site.title %}
+    <div id="mu-logo" class="mu-logo">
+      <img src="{{ ASSET_PATH }}/img/mucow.png" height="264" width="200" alt="&mu;"  />
+    </div>
+  {% endif %}
+
   {{ content }}
   
   <div id="footer">

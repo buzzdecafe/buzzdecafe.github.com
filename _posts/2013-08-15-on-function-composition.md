@@ -18,11 +18,11 @@ We use a similar approach to "memoizing" functions by arity in [Ramda](https://g
       };
     };
 
-Since we've implemented `foldr` in an imperative fashion (eeeeew), the performance penalty is negligible; and since the intent of compose is typically to load up a function and then reuse it, then `compose` may not be a great target for performance optimization in the first place. 
+Since we've implemented `foldr` in an imperative fashion (eeeeew), the performance penalty is negligible. And since the intent of `compose` is typically to generate a function once to use over and over, then `compose` may not be a great target for performance optimization in the first place. 
 
-Ultimately, what I want to do is be able to compose some really useful functions on the fly, with as little code as possible. I'm not there yet. Part of the problem is how to handle variadic functions. (That may be a topic for another time.)
+Ultimately, what I want to do is be able to compose some really useful functions on the fly, with as little code as possible. I'm not there yet. Part of the problem is how to handle variadic functions. (That is a topic for another time: Composing Curried Variadic Functions. That should have a broad audience.)
 
-What I'd like to do is compose `map` and `pick` to give me a function that would project attributes over an array of objects. (Scott started down this road, but when he took some time off, I took up the torch.) This would be nice:
+For example, I'd like to compose `map` and `pick` to give me a function that would project attributes over an array of objects. This is analogous to a `SELECT x, y, z` statement in SQL. (Scott started down this road, but when he took some time off, I took up the torch.) This would be nice:
 
     var project = compose(map, pick);
     var selected = project(attrs, objects);
@@ -34,7 +34,7 @@ At present, this doesn't work in Ramda because `pick` comes out of `curry` not k
 
 Why do something if you can't do it elegantly? Furthermore, the "function butt" makes some Puritanical developers uncomfortable. 
 
-In Ramda we have another issue. Since `pick` will return an empty object if the passed-in object doesn't have any of the passed in properties, this simple `project` will not behave like you might think `project` should: It won't filter objects with undefined properties; it will include as many objects in its output as are given to it in its table parameter.
+In Ramda we have another issue. Since `pick` will return an empty object if the passed-in object doesn't have any of the passed in properties, this simple `project` will not behave like a SQL-style projection should: It won't filter objects with undefined properties; it will include as many objects in its output as are given to it in its table parameter.
 
 You can hack around that, of course, by filtering the table on the way into `project`:
 
@@ -44,7 +44,7 @@ You can hack around that, of course, by filtering the table on the way into `pro
       }, table));
     });
 
-... but now this is starting to get ugly. It seems the better approach is to compose `project` out of a function that won't return an empty object.
+... but now this is starting to get ugly. A better approach may be to compose `project` out of a function that won't return an empty object.
 
 Well, it's a work in progress, and there is plenty of room to improve!
 

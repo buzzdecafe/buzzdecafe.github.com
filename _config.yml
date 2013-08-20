@@ -10,13 +10,14 @@ pygments: true
 # so be sure to set them if your theme uses them.
 #
 title : "&mu;"
+feedtitle: mu
 tagline: Does a blog have Buddha-nature?
 author :
   name : Buzz de Cafe
   email : m_hur@yahoo.com
   github : buzzdecafe
   twitter : buzzdecafe
-  feedburner : buzzdecafe
+  feedburner :
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 

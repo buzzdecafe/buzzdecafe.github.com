@@ -54,9 +54,9 @@ This is simple enough to achieve by writing a new version of `pick`, called say,
 
     R.pickAll = curry(function(names, object) {
         var copy = {};
-        each(names, function(name) {
+        each(function(name) {
             copy[name] = object[name];
-        });
+        }, names);
         return copy;
     });
 

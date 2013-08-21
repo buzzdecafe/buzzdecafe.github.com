@@ -2,8 +2,8 @@
 layout: post
 title: "The project project"
 description: ""
-category: 
-tags: []
+category: code
+tags: [functional, javascript]
 ---
 {% include JB/setup %}
 

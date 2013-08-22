@@ -17,7 +17,7 @@ What should the contract of a function called `project` be? Suppose you have a c
       {c: 300}
     ];
 
-... and we want to fetch the `a` and `b` attributes of each object in `table`. If this were SQL, I'd expect to get back a set like this:
+... and we want to fetch the `a` and `b` attributes of each object in `table`. Maybe I want to get back a set like this:
 
     [
       {a:1, b:2}, 
@@ -50,7 +50,7 @@ So we've got a projected object out for every object in the input `table`, but i
       {a: undefined, b: undefined}
     ]
 
-This is simple enough to achieve by writing a new version of `pick`, called say, `pickAll`, that does not test for properties on the input object:
+This is essentially how a SQL-style `project` works (substitute `null` for `undefined`). This is simple enough to achieve by writing a new version of `pick`, called say, `pickAll`, that does not test for properties on the input object:
 
     R.pickAll = curry(function(names, object) {
         var copy = {};
@@ -60,7 +60,7 @@ This is simple enough to achieve by writing a new version of `pick`, called say,
         return copy;
     });
 
-Then compose `map` and `pickAll`, and you've got a `project`-style function that guarantees that the output objects will have the desired properties, even if they are undefined. The only benefit of this, as far as I can tell right now, is that they will all report the same result when enumerating their keys. Of course, they will still report the value of that key as undefined, exactly as the original `pick` would. So is it worth it?
+Then compose `map` and `pickAll`, and you've got a `project`-style function that guarantees that the output objects will have the desired properties, even if they are undefined. There are two benefits of this; first, this is consistent with relational algebra and familiar from SQL; and second, projected objects will report the same result when enumerating their keys. Of course, they will still report the value of that key as undefined, exactly as the original `pick` would.
 
 
 

@@ -9,7 +9,13 @@
   {{ content }}
 
   <address class="signature">
-    <a class="author" href="{{ HOME_PATH }}">{{ site.author.name }}</a> 
+    <span class="author">
+      <a href="{{ HOME_PATH }}">{{ site.author.name }}</a> 
+      <a href="https://github.com/buzzdecafe"><i class="icon-github icon-large"></i></a> 
+      <a href="https://plus.google.com/u/0/109680233908242274420/posts/p/pub"><i class="icon-google-plus icon-large"></i></a> 
+      <a href="https://twitter.com/buzzdecafe"><i class="icon-twitter icon-large"></i></a> 
+      <a href="http://lnkd.in/bVvTbzf"><i class="icon-linkedin icon-large"></i></a>
+    </span>
     <span class="date">{{ page.date | date_to_long_string }}</span>
     <span class="location">{{ page.location }}</span>
   </address>

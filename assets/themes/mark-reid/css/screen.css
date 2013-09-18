@@ -318,6 +318,9 @@ p.excerpt { margin: 0; }
 	display: block;
 	margin-bottom: 1.5em;
 }
+.signature .author a {
+  margin-right:6px;
+}
 .signature .date { 
 	font-size: 87.5%;
 	line-height: 1.5em;

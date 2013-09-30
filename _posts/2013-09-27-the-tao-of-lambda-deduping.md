@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Tao of &lambda;: Deduping"
+title: "The Tao of &#955;: Deduping"
 description: ""
 category: code
 tags: [javascript, functional]

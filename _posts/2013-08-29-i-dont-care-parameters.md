@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "&ldquo;I don&rsquo;t care&rdquo; parameters"
+title: "&#8220;I don&#8217;t care&#8221; parameters"
 description: ""
 category: code 
 tags: [javascript, erlang]

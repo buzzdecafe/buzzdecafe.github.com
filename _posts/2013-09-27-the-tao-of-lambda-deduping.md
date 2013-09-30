@@ -142,5 +142,8 @@ This design makes `dedupe` robust. Imagine that somehow the spec of `xs` changes
 
 I hope this example demonstrates that functional programming isn't all ivory tower stuff. In fact, it can be used to improve real code.
 
+## Update
+
+Scott Sauyet has provided [tests for the code above](http://jsbin.com/oCAvAtU/1); also see the [tests' source code](http://jsbin.com/oCAvAtU/1/edit). Scott also took it another step by currying the `some` function and producing even leaner code.
 
 

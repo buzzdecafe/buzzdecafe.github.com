@@ -2,8 +2,8 @@
 layout: post
 title: "The Tao of &lambda;: Deduping"
 description: ""
-category: 
-tags: []
+category: code
+tags: [javascript, functional]
 ---
 {% include JB/setup %}
 

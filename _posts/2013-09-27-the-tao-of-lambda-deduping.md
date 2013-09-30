@@ -108,10 +108,11 @@ And we need to iterate over the passed-in array (`xs`) and use the `some` test a
 
     {% highlight javascript %}
     foldl(function(acc, curr) {
-        if (!some(function(accElem) { return predicate(accElem, curr); }, acc)) {
-          acc = append(curr, acc);
-        }
-        return acc;
+        // if the element is in the accumulator, return the accumulator;
+        // if not, then add the element to the accumulator and return it.
+        return (some(function(accElem) { return predicate(accElem, curr); }, acc)) ? 
+            acc : 
+            append(curr, acc);
       }, 
       [],        // the accumulator
       list);     // `xs` or whatever
@@ -122,9 +123,7 @@ Put it all together, and we have our generic `dedupe` function:
     {% highlight javascript %}
     function dedupe(predicate, list) {
       return foldl(function(acc, curr) {
-          // if the element is in the accumulator, return the accumulator;
-          // if not, then add the element to the accumulator and return it.
-          return (some(function(accElem) { return predicate(accElem, curr); }, acc)) ? 
+        return (some(function(accElem) { return predicate(accElem, curr); }, acc)) ? 
             acc : 
             append(curr, acc);
         }, [], list);

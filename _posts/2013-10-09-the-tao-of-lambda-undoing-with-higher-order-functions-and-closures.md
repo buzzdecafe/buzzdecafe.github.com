@@ -37,7 +37,9 @@ That pretty much does the trick. Then a colleague asked: "If the value is a func
     {% highlight javascript %}
     var revalue = function(obj, prop, newValue) {
         var undo, orig = obj[prop], isFn = typeof newValue === "function";
-        obj[prop] = isFn ? function() { return newValue.apply(obj, arguments); } : newValue;
+        obj[prop] = isFn ? 
+            function() { return newValue.apply(obj, arguments); } : 
+            newValue;
         undo = function() {
             obj[prop] = orig;
             return orig;

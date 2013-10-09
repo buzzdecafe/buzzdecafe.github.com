@@ -7,17 +7,18 @@ tags: [functional, javascript]
 ---
 {% include JB/setup %}
 
-Sometimes you need to temporarily change the value of an object property. Maybe you need to stub soething for a test; or maybe you need to undo--to revert to the prior value for that property. You can do this imperatively, of course, and that is fine,really. But I want a more generic solution. 
+Sometimes you need to temporarily change the value of an object property. Maybe you need to stub something for a test; or maybe you need to revert to the prior value for that property. You can do this imperatively, of course, and that is fine. But I want a more generic solution. 
 
-I want a function that I pass an object, the property to override, and the new value for the property, and have it return me an undo function to restore the object's prior state:
+I want a function that I pass an object, the property to override, and the new value for the property, and have it return me an `undo` function to restore the object's prior state:
 
     {% highlight javascript %}
     var undo = revalue(obj, prop, newValue);
     // do whatever
     undo();
+    // hey, my original obj is back!
     {% endhighlight %}
 
-Here's a first try:
+Here's a first try that stores the original value in the closure of the returned `undo` function:
 
     {% highlight javascript %}
     var revalue = function(obj, prop, newValue) {
@@ -31,7 +32,7 @@ Here's a first try:
     };
     {% endhighlight %}
 
-So far, so good. Then a colleague asked: "If it's a function, why not add a `restore` property to it?" OK, it's a bit redundant, since we are returning the `undo` function anyways, but WTH.   
+That pretty much does the trick. Then a colleague asked: "If the value is a function, why not add a `restore` property to it?" OK, it's a bit redundant, since we are returning the `undo` function anyways, but WTH.   
 
     {% highlight javascript %}
     var revalue = function(obj, prop, newValue) {
@@ -54,7 +55,7 @@ Note that we have to wrap the `newValue` function inside a lambda:
     obj[prop] = isFn ? function() { return newValue.apply(obj, arguments); } : newValue;
     {% endhighlight %}
     
-If we don't wrap `newValue` this way, then the `restore` property will be attached to `newValue` and will leak out of the `revalue` function. We don't want that. It's safe to attach the `restore` property to the lambda:
+If we don't wrap `newValue` this way, then the `restore` property will be attached to `newValue` and it will leak out of the `undo` function. We don't want that. It's safe to attach the `restore` property to the lambda:
 
     {% highlight javascript %}
     if (isFn) {
@@ -62,7 +63,7 @@ If we don't wrap `newValue` this way, then the `restore` property will be attach
     }  
     {% endhighlight %}
 
-The final version extends `undo` to take a callback function. That callback can be passed in as an optional fourth argument to `revalue`, or as an optional argument to the `undo` function itself. It's up to the user to make the callback return something useful:
+And since anything worth doing is worth overdoing, the final version extends `undo` to take a callback function. That callback can be passed in as an optional fourth argument to `revalue`, or as an optional argument to the `undo` function itself. It's up to the user to make the callback return something useful:
     
     {% highlight javascript %}
     var revalue = function(obj, prop, newValue, undoCallback) {
@@ -81,3 +82,5 @@ The final version extends `undo` to take a callback function. That callback can 
         return undo;
     };
     {% endhighlight %}
+
+ 

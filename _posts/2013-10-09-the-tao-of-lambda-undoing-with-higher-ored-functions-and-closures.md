@@ -54,7 +54,7 @@ Note that we have to wrap the `newValue` function inside a lambda:
     obj[prop] = isFn ? function() { return newValue.apply(obj, arguments); } : newValue;
     {% endhighlight %}
     
-If we don't wrap `newValue` this way, then the `restore` property will be attached to `newValue` and will leak out of the `revalue` function. We don't want that. It's safe to attach the restor property to the lambda:
+If we don't wrap `newValue` this way, then the `restore` property will be attached to `newValue` and will leak out of the `revalue` function. We don't want that. It's safe to attach the `restore` property to the lambda:
 
     {% highlight javascript %}
     if (isFn) {

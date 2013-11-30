@@ -3,7 +3,7 @@ layout: post
 title: "AngularJS and FirefoxOS"
 description: ""
 category: code
-tags: [angular, javascript, mobile]
+tags: [angular, javascript, mobile, firefoxos]
 ---
 {% include JB/setup %}
 

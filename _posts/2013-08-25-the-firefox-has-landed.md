@@ -3,7 +3,7 @@ layout: post
 title: "The Firefox has landed"
 description: ""
 category: 
-tags: [mobile]
+tags: [mobile, firefoxos]
 ---
 {% include JB/setup %}
 

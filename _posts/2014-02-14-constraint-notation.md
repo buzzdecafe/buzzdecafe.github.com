@@ -64,7 +64,7 @@ constraint on that property. Here's how the examples above would look:
     // example 2: find objects where x > 2 && y > x*2  && y is even
     var xGt10 = find(where({
       x: function(val, obj) { return val > 10; },
-      y: function(val, obj) { return val > obj.x * 2 && y % 2 === 0; }
+      y: function(val, obj) { return val > obj.x * 2 && val % 2 === 0; }
     }), list);
     {% endhighlight %}
 

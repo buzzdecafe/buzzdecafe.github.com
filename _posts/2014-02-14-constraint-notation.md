@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Constraint notation"
+title: "Constraint notation in Javascript"
 description: ""
 category: code
 tags: [javascript]

@@ -13,9 +13,9 @@ tags: [javascript]
 >
 > -- Donald Knuth
 
-One of the things I really like about working with Lodash is its object 
+One of the things I really like about working with [Lo-Dash](http://lodash.com/) is its object 
 constraint notation. For example, suppose I want to find an item in a list 
-where `x === 10`. Lodash lets me express that like this:
+where `x === 10`. Lo-Dash lets me express that like this:
 
     {% highlight javascript %}
     var xIs10 = _.find(list, {x: 10});
@@ -25,7 +25,7 @@ I find this syntax easy to write, and at least as important, easy to read.
 The intent is perfectly clear.
 
 Naturally, I wanted to incorporate this elegant syntax into [Ramda](https://github.com/CrossEye/ramda).
-But this would not be an easy fit. Ramda is significantly different from Lodash.
+But this would not be an easy fit. Ramda is significantly different from Lo-Dash.
 Since Ramda emphasizes function composition, the biggest obstacle to integrating the 
 object constraint syntax is that Ramda methods always take the function *first* and 
 the list *last*.

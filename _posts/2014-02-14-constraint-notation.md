@@ -59,12 +59,12 @@ constraint on that property. Here's how the examples above would look:
 
     {% highlight javascript %}
     // example 1: find objects where x > 10
-    var xGt10 = filter(where({x: function(val) { return val > 10; }}), list);
+    var xGt10 = filter(where({x: function(x) { return x > 10; }}), list);
 
     // example 2: find objects where x > 2 && y > x*2  && y is even
     var xGt2etc = find(where({
-      x: function(val, obj) { return val > 10; },
-      y: function(val, obj) { return val > obj.x * 2 && val % 2 === 0; }
+      x: function(x, obj) { return x > 10; },
+      y: function(y, obj) { return y > obj.x * 2 && y % 2 === 0; }
     }), list);
     {% endhighlight %}
 

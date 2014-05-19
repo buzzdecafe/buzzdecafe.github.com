@@ -25,8 +25,10 @@ etc. But Ramda is significantly different from libraries like Underscore and Lod
 
         {% highlight javascript %}
         // Underscore/Lodash style:
-        var usersNamedBuzz = function(users) {
-          return _.filter(users, function(user) { return user.name === 'Buzz'; });
+        var validUsersNamedBuzz = function(users) {
+          return _.filter(users, function(user) { 
+            return user.name === 'Buzz' && _.isEmpty(user.errors); 
+          });
         };
         {%endhighlight%}
 
@@ -34,7 +36,7 @@ etc. But Ramda is significantly different from libraries like Underscore and Lod
 
         {% highlight javascript %}
         // Ramda style:
-        var usersNamedBuzz = R.filter(R.where({name: 'Buzz'}));
+        var validUsersNamedBuzz = R.filter(R.where({name: 'Buzz', errors: R.isEmpty}));
         {%endhighlight%}
 
 *  **Ramda methods are automatically curried.** While you can curry (or partially apply) functions in Underscore and Lodash, Ramda does it for you. Virtually all methods of 2 or more arguments are curried by default in Ramda. For example:

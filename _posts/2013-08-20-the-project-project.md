@@ -3,7 +3,7 @@ layout: post
 title: "The project project"
 description: ""
 category: code
-tags: [functional, javascript]
+tags: [functional, javascript, ramda]
 ---
 {% include JB/setup %}
 

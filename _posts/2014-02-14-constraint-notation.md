@@ -3,7 +3,7 @@ layout: post
 title: "Constraint notation in Javascript"
 description: ""
 category: code
-tags: [javascript]
+tags: [javascript, functional, ramda]
 ---
 {% include JB/setup %}
 

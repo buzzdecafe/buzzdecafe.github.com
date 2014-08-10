@@ -7,7 +7,7 @@ tags: [haskell, functional, "book review", haiku]
 ---
 {% include JB/setup %}
 
-Pure and elegant
-See the beautiful patterns...
-Monads? WTF?
+Pure and elegant   
+See the beautiful patterns...   
+Monads? WTF?   
 

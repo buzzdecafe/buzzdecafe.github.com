@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The Tao of &lambda;: Applicatives, Ramda style"
+title: "The Tao of &#955;: Applicatives, Ramda style"
 description: ""
 category: code
 tags: [ramda, functional, javascript]
@@ -113,8 +113,8 @@ partially applied to the `Identity` function:
 All that remains to do is to prepare the original list to be input to this composition. 
 We can't just pass a list of letters in. Recall that `ap` will apply its array of functions to 
 each one of its list of arguments. If we passed in the array `['a', 'b', 'c', 'd']`, `ap` 
-would call each function four times! And worse than that, we have partially applied `contains` 
-inside `ap`, so those functions are expecting an array, not a string.
+would call each function four times! Worse than that, we have partially applied `contains` 
+inside `ap`, and those functions are expecting an array, not a string.
 
 In other words, we want to pass the input array *inside* the arguments list to `ap`. 
 The solution is to wrap the input in an array. That is exactly what `of` does. So the complete

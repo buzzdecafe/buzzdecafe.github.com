@@ -7,6 +7,14 @@ tags: [javascript, ramda, functional]
 ---
 {% include JB/setup %}
 
+<div style="outline: 1px dashed red; padding: 4px;">
+<strong>***UPDATE***</strong>
+<p>
+Turns out this didn't work well! It was both confusing to users and inconsistent in its behavior. 
+Read the next post <a href="/code/2014/10/02/not-haskell">"It turns out that JavaScript is not Haskell</a>
+to see what we're doing about it.</p>
+</div>
+
 For [Ramda](https://github.com/CrossEye/ramda) we've wrapped several JavaScript
 infix operators as functions, i.e. in prefix form. You gotta do that if you want to curry 
 and compose with those operations. Some of the time, that works out fine. `add`, for example,

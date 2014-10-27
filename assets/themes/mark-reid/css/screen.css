@@ -59,7 +59,7 @@ hr {
 	border-top: 1px solid silver;
 	border-bottom: none;
 	padding: 0;
-	margin: 1.46em 0 0 0;
+	margin: 1.46em 0 1em 0;
 }
 
 sup { line-height: 1ex; }
@@ -559,3 +559,9 @@ img.maruku-png { }
   height: 264px;
   float: right;
 }
+.illo {
+  margin: 0 0 1em 0;
+  text-align: center;
+  outline: 1px solid #ccc;
+}
+

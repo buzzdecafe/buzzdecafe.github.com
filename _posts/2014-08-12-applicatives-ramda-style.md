@@ -7,7 +7,7 @@ tags: [ramda, functional, javascript]
 ---
 {% include JB/setup %}
 
-I've been working on making [Ramda](https://github.com/CrossEye/ramda) integrate with
+I've been working on making [Ramda](https://github.com/ramda/ramda) integrate with
 [Fantasy-land](https://github.com/fantasyland/fantasy-land)-style objects. Specifically, I added the
 functions `ap` and `of` to Ramda. These functions satisfy the `Apply` and `Applicative`
 specifications, respectively.

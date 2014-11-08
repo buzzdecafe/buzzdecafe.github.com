@@ -72,7 +72,7 @@ fashion--was not only confusing, but inconsistent. It was holed below the waterl
 So, my apologies. I really thought we had something cool there. But it wound up being a dud.
 
 We have learned from it, however. In the master branch of Ramda now, I have [re-implemented 
-`op`](https://github.com/CrossEye/ramda/commit/a234239e08fd4b5e4a8f07a459a4dc2586c45925)
+`op`](https://github.com/ramda/ramda/commit/a234239e08fd4b5e4a8f07a459a4dc2586c45925)
 with consistent behavior and semantics, essentially using a "placeholder" approach, e.g:
 
     {%highlight javascript%}

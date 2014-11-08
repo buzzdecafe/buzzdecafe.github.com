@@ -8,7 +8,7 @@ tags: [functional, javascript, ramda, performance]
 {% include JB/setup %}
 
 A little while ago I wrote a [post about a `where` function](/code/2014/02/14/constraint-notation/)
-I was adding to [Ramda](https://github.com/CrossEye/ramda). The function takes two objects, a spec 
+I was adding to [Ramda](https://github.com/ramda/ramda). The function takes two objects, a spec 
 and a test object, and returns `true` if the test object satisfies the spec. Since `where` is curried,
 it is great for generating predicates; and in context, e.g. with a `find` or `filter`, it produces
 code that *reads well*. Here's a toy example to illustrate what I mean:

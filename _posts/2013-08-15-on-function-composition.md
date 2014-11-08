@@ -9,7 +9,7 @@ tags: [functional, javascript]
 
 My friend and former (and future?) colleague, Paul Grenier, recently posted on the topic of [function composition](http://autosponge.github.io/blog/2013/02/09/variadic-composition-without-recursion/) in Javascript. Paul takes the angle that we can avoid some of the performance problems associated with the functional style (although at the cost of some maintainability--constructed functions are not the most pleasant thing to debug).
 
-We use a similar approach to "memoizing" functions by arity in [Ramda](https://github.com/CrossEye/ramda) that Paul recommends (cf. `nAry` function). Our implementation of a variadic `compose` function is straightforward:
+We use a similar approach to "memoizing" functions by arity in [Ramda](https://github.com/ramda/ramda) that Paul recommends (cf. `nAry` function). Our implementation of a variadic `compose` function is straightforward:
 
     var compose = function() { 
       var fns = slice(arguments);

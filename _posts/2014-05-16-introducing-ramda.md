@@ -7,7 +7,7 @@ tags: [functional, javascript]
 ---
 {% include JB/setup %}
 
-For the past year plus, my colleague Scott Sauyet and I have been working in our free time on [Ramda](https://github.com/CrossEye/ramda), 
+For the past year plus, my colleague Scott Sauyet and I have been working in our free time on [Ramda](https://github.com/ramda/ramda), 
 "a practical functional library for Javascript programmers." When we signed up for Frontend Masters 
 "Hardcore Functional Programming with Javascript" workshop, we were surprised to learn that they had selected 
 Ramda to illustrate their examples. With that vote of confidence, we figured it is time to announce the arrival of
@@ -79,6 +79,5 @@ describing the advantages of this style.)
     {%endhighlight%}
     
 [Ramda is available on npm](https://www.npmjs.org/package/ramda), so please take it for a spin. 
-[Look over the annotated source code](https://rawgit.com/CrossEye/ramda/master/docs/ramda.html).  And 
-[please let us know](https://github.com/CrossEye/ramda/issues)
+And [please let us know](https://github.com/CrossEye/ramda/issues)
 what you think, and how the library can be improved.

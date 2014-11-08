@@ -15,7 +15,7 @@ Read the next post <a href="/code/2014/10/02/not-haskell">"It turns out that Jav
 to see what we're doing about it.</p>
 </div>
 
-For [Ramda](https://github.com/CrossEye/ramda) we've wrapped several JavaScript
+For [Ramda](https://github.com/ramda/ramda) we've wrapped several JavaScript
 infix operators as functions, i.e. in prefix form. You gotta do that if you want to curry 
 and compose with those operations. Some of the time, that works out fine. `add`, for example,
 converts to prefix form with no confusion:

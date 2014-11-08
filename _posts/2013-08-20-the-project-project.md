@@ -26,7 +26,7 @@ What should the contract of a function called `project` be? Suppose you have a c
 
 i.e., if an attribute is undefined on the input object, then the object doesn't appear in the output. In terms of relational algebra, getting this output takes two operations; one to select the objects that have defined properties, and one project those properties onto the output objects. They are associative, but it's smart to select first, then project, since you may have fewer objects to iterate over after the selection. 
 
-For now, the simple, algebraic approach is what we're going to take with `project` in [Ramda](https://github.com/CrossEye/ramda). In other words, `project` will simply project; it's up to the caller to pre-select the input table or filter the output results. But there is more to it than that. The implementation of `pick` checks for the existence of a name on the input object before copying the value over to the projected object, i.e.:
+For now, the simple, algebraic approach is what we're going to take with `project` in [Ramda](https://github.com/ramda/ramda). In other words, `project` will simply project; it's up to the caller to pre-select the input table or filter the output results. But there is more to it than that. The implementation of `pick` checks for the existence of a name on the input object before copying the value over to the projected object, i.e.:
 
     project(['a', 'b'])(table) 
 

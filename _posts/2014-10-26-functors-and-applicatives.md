@@ -210,7 +210,7 @@ And the implementation for Array is trivial:
     {%endhighlight%}
     
 Please read [my article on Applicatives](/code/2014/08/12/applicatives-ramda-style/) for a real-world 
-example of these concepts in action.
+example of these concepts in action. Gleb Bahmutov has also written a [good article on using Applicative Functors with Promises](http://bahmutov.calepin.co/combine-promises-with-maybe-functors.html) that goes more in depth in the code than this article did. And I also should mention the excellent illustrated article [Functors, Applicatives, And Monads In Pictures](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html), by Aditya Y. Bhargava.
 
 -----------------------------------------------
 

@@ -1,16 +1,25 @@
-# This is the default format. 
-# For more see: http://jekyllrb.com/docs/permalinks/
-permalink: /:categories/:year/:month/:day/:title 
-
+title : "&mu;"
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-auto: true
-highlighter: pygments
 markdown: kramdown
-
+github: [metadata]
+kramdown:
+  input: GFM
+  hard_wrap: false
+permalink: /:categories/:year/:month/:day/:title 
+#gems:
+#  - jekyll-coffeescript
+#  - jekyll-paginate
+ 
+lsi: false
+safe: true
+source: [/]
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : "&mu;"
 feedtitle: mu
 tagline: Does a blog have Buddha-nature?
 author :
@@ -28,7 +37,7 @@ author :
 # Else if you are pushing to username.github.io, replace with your username.
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
-production_url : http://buzzdecafe.github.io
+url : http://buzzdecafe.github.io
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
@@ -101,7 +110,7 @@ JB :
   # Set 'provider' to false to turn analytics off globally.
   #        
   analytics :
-    provider : google 
+    provider : false
     google : 
         tracking_id : 'UA-43257374-1'
     getclicky :

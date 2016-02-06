@@ -2,7 +2,7 @@
 layout: post
 title: "Exceptional composition"
 description: "Making exceptions play nice in function composition"
-category: functional
+category: code
 tags: [ramda, javascript, ocaml]
 ---
 {% include JB/setup %}

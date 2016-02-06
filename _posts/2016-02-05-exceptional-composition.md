@@ -28,13 +28,13 @@ billion integers, and you need to get a product over the whole list:
 
 This is a bit naive. The biggest problem is what if I encounter a zero? At 
 that point I know that the whole product will be zero. I can stop multiplying.
-Adding as `if` check doesn't quite solve the problem:
+Adding an `if` check doesn't quite solve the problem:
 
     {% highlight ocaml %}
       | x::xs -> if x = 0 then 0 else x * (product xs)
     {% endhighlight %}
 
-What if 0 is the last integer in the list? I have built up nearly a billion 
+What if zero is the last integer in the list? I have built up nearly a billion 
 recursive calls in my stack that I still have to unwind. This is the kind of 
 grimy, real-world consideration that some functional programmers like to sweep
 under the rug.

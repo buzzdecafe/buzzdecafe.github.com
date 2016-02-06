@@ -85,8 +85,8 @@ sometimes.
 
 So I added a simple function `tryCatch`:
 
-    {% highlight javascript %}
-    tryCatch :: (a -> b) -> ((e, a) -> b) -> a -> b
+    {% highlight ocaml %}
+    tryCatch : (a -> b) -> ((e, a) -> b) -> a -> b
     {% endhighlight %}
 
 `tryCatch` evaluates the first function (i.e. `a -> b`). If it does not throw, it 

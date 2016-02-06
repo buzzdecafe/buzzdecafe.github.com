@@ -101,7 +101,7 @@ as OCaml's. And it's unlikely there is any performance benefit to this approach
 in JavaScript, but there definitely is an advantage in OCaml. 
 
 On the other hand, exceptions are a fact of life in JavaScript. So it feels right
-the ramda should provide some way to deal with them.
+that ramda should provide some way to deal with them.
 
 `tryCatch` will be introduced in ramda 0.20.
 

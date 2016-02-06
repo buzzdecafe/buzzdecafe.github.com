@@ -96,7 +96,7 @@ something of type `b`. _Et voila!_ You can compose with exceptions.
 
 The usual JavaScript caveats apply; The second function *must* return the same type 
 as the first function. It is up to the user to enforce this, since JavaScript 
-will offer no help in this regard. And, fo course, the syntax is nowhere near as nice 
+will offer no help in this regard. And, of course, the syntax is nowhere near as nice 
 as OCaml's. And it's unlikely there is any performance benefit to this approach
 in JavaScript, but there definitely is an advantage in OCaml. 
 

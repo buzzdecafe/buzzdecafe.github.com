@@ -12,7 +12,7 @@ permalink: /:categories/:year/:month/:day/:title
  
 lsi: false
 safe: true
-source: [/]
+source: .
 incremental: false
 highlighter: rouge
 gist:

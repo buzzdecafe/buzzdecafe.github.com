@@ -41,7 +41,7 @@ What will our function `f` look like?
 Before I pull a rabbit out of this hat, a few words about 
 [`chain`](http://ramdajs.com/docs/#chain): 
 
-    `chain :: Chain m => (a -> m b) -> m a -> m b`
+    chain :: Chain m => (a -> m b) -> m a -> m b
 
 Let's break this signature down into bite-sized pieces and digest them one-by-one.
 
@@ -61,6 +61,7 @@ Here is an example of `chain`. It is often called `flatMap`:
     {% endhighlight %}
 
 In this example, 
+
 * `(a -> m b)` is the function `dup`, `a` is `Number`, and the `Chain`-_thing_ `m b` is 
   an Array of Numbers.
 * The `Chain`-_thing_ `m a` is an Array of Numbers. 

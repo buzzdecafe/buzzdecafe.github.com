@@ -41,17 +41,17 @@ What will our function `f` look like?
 Before I pull a rabbit out of this hat, a few words about 
 [`chain`](http://ramdajs.com/docs/#chain): 
 
-    `chain :: Chain m => (a -> m b) -> m a -> m b`
+    chain :: Chain m => (a -> m b) -> m a -> m b
 
 Let's break this signature down into bite-sized pieces and digest them one-by-one.
 
 * `Chain m`: There is some _thing_ `m` that is a `Chain`. 
 * `=>`: This tells us that whenever we see an `m` in the rest of the singature, 
-  we know it is a `Chain`-_thing_.
+  we know it is a `Chain` _thing_.
 * `(a -> m b)`: The first argument to `chain` is a function from some type `a`
-  to a `Chain-`_thing_ that "contains" a value of type `b`.
-* `m a`: The second argument to `chain` is a `Chain`-_thing_ wrapping a value of type `a`.
-* `m b`: This is our return type. `chain` will return a `Chain`-_thing_ wrapping a value `b`.
+  to a `Chain` that "contains" a value of type `b`.
+* `m a`: The second argument to `chain` is a `Chain` wrapping a value of type `a`.
+* `m b`: This is our return type. `chain` will return a `Chain` wrapping a value `b`.
 
 Here is an example of `chain`. It is often called `flatMap`:
 
@@ -61,17 +61,18 @@ Here is an example of `chain`. It is often called `flatMap`:
     {% endhighlight %}
 
 In this example, 
-* `(a -> m b)` is the function `dup`, `a` is `Number`, and the `Chain`-_thing_ `m b` is 
+
+* `(a -> m b)` is the function `dup`, `a` is `Number`, and the `Chain` `m b` is 
   an Array of Numbers.
-* The `Chain`-_thing_ `m a` is an Array of Numbers. 
-* The returned value `m b` is the same type as `m a`: A `Chain`-_thing_ of an Array of Numbers.
+* The `Chain` `m a` is an Array of Numbers. 
+* The returned value `m b` is the same type as `m a`: A `Chain` of an Array of Numbers.
 * Note that in this example, both type variables `a` and `b` refer to the same type: 
-  an Array of Numbers. Likewise, `m a` and `m b` both refer to a `Chain`-_thing_ of an
+  an Array of Numbers. Likewise, `m a` and `m b` both refer to a `Chain` of an
   Array of Numbers. This need not always be the case, but it is also not a problem when it 
   is the case.
 
 It should be pretty clear how `chain` works in the context of Array of _Something_. In this case, though, 
-we want to output a Function `f`. Is Function a `Chain`-_thing_?
+we want to output a Function `f`. Is Function a `Chain`?
 
 Recall the signature:
 

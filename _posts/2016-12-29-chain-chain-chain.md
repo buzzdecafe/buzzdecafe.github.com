@@ -86,7 +86,7 @@ Replace `Chain m => m` with `Function x`:
     {% endhighlight %}
 
 You can look at a function from `x` to `a` as a _wrapper_ around its return value `a`. 
-Iy is analogous to an Array wrapping its elements.
+It is analogous to an Array wrapping its elements.
 
 Now use `x -> y` as sugar for `Function x y`:
 
@@ -120,7 +120,7 @@ to produce is a function `f` of type `m b`. Now our types line up perfectly:
 
 <img src="/assets/img/rabbit-hat-sherlock.gif" alt="ta-da" style="display:block; margin:auto" />
 
-But wait -- there's more! Does this mean that any you can do this with any function
+But wait -- there's more! Does this mean that you can do this with any function
 that satisfies those signatures? That's exactly what it means. For example, you could 
 `chain` `toLower` and `concat` over a String:
 

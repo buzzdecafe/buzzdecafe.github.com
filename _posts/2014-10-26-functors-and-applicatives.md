@@ -100,21 +100,15 @@ function to its content. We simply get an empty container back.
 </figure>
 
 This example is essentially the "Maybe" functor. "Maybe" let's you wrap up a function from `a` to `b`
-so that you can apply it to the contents of the Maybe. Here's how we have implemented that in Ramda:
+so that you can apply it to the contents of the Maybe. [Take a look at how we have implemented `Maybe` in Ramda Fantasy](https://github.com/ramda/ramda-fantasy/blob/master/src/Maybe.js).
+You can see that `Maybe` is a sum type; it is a `Just` of some value, or it is `Nothing`.
+You can use the direct your composition into the proper channel with something like:
 
     {%highlight javascript%}
-    function Maybe(x) { 
-      if (!(this instanceof Maybe)) { return new Maybe(x); }
-      this.value = x;
+    function fromNullable(x) {
+        return x == null ? Maybe.Nothing : Maybe.Just(x);
     }
-    Maybe.prototype.map = function(fn) {
-      return this.value == null ? this : new Maybe(fn(this.value));
-    };
     {%endhighlight%}
-
-(The Haskell folks may cringe at this--the definition of Maybe in Haskell is `data Maybe a = Nothing | Just a`. 
-But we're talking JavaScript here, and Haskell's strong typing is not required, and maybe it's not even helpful.)
-
 
 Now let's go back to the `capitalize` example. We can rewrite that to make use of the Maybe functor:
 
@@ -123,7 +117,7 @@ Now let's go back to the `capitalize` example. We can rewrite that to make use o
     var capitalize = R.compose(
         R.map(R.toUpperCase), // Maybe String -> Maybe String
         R.map(R.prop('textContent')), // Maybe Object -> Maybe String
-        Maybe,  // Object -> Maybe Object
+        fromNullable,  // Object -> Maybe Object
         R.bind(document.getElementById, document) // String -> DOMElement
     );
     {%endhighlight%}
@@ -199,7 +193,7 @@ Here's how we implemented `of` for `Maybe`:
 
     {%highlight javascript%}
     Maybe.of = function(x) {
-      return new Maybe(x);
+      return new Maybe.Just(x);
     };
     {%endhighlight%}
     

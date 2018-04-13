@@ -40,7 +40,7 @@ But not quite. What if the type `a` is itself a `Promise`? Suppose `f` is
     const f = p => p.then(n => n * 2)
     
 In this example `f` is a function from `Promise Number -> Promise Number`. Let's plug in a `Promise Number` for `a` to match up
-with the expected input for `f`. When we can evaluate the expression:
+with the expected input for `f`. Then we can evaluate the expression:
 
     const a = Promise.resolve(1)
     const output = Promise.resolve(a).then(f)    

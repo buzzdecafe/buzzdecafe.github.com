@@ -65,7 +65,7 @@ This struck me as an odd assertion:
 
 > Speed is under-appreciated by most programmers. The best engineers always make sure that their code is fast ..."
 
-I have not found this to be true. I have seen developers of all levels fetishize fetishize performance,
+I have not found this to be true. I have seen developers of all levels fetishize performance,
 trying to squeeze microseconds out of some function without regard for whether such optimization *matters*. 
 
 As a *general* rule, I feel like you should only optimize code for performance when 
@@ -100,7 +100,7 @@ two basic objections to the article:
 
 <ol>
   <li>I object to the clickbait-and-switch title about becoming a great <em>programmer</em> when that is really not what the article is
-about <em>at all</em>. Now, one could argue English is *really* saying that a programmer can increase their value to their employer
+about <em>at all</em>. Now, one could argue English is <em>really</em> saying that a programmer can increase their value to their employer
 by being acutely aware of the architectural constraints of the business and using those to guide technical decisions.
 I would not argue with that at all, that is practically a truism. But that is not what the article says.  I would counter that the thesis of the article is explicitly about "greatness", not "value"; and its examples of "greatness" are all bound to particular architectural concerns, especially speed to market, as shown above.</li>
   <li>I object to the assertion that "adhering to my priorities" is a recipe for "greatness" in general.</li>

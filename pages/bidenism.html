@@ -3,238 +3,61 @@
 
 <head>
   <meta charset="utf-8" />
-  <style>
-    body>div {
-      margin: 1.5rem;
-    }
-
-    #out {
-      width: 90%;
-      margin: 1rem;
-      display: none;
-    }
-
-    #your-bidenism {
-      border: 2px solid blue;
-      padding: 1rem;
-      margin: 1rem 0;
-      max-width: 32rem;
-      line-height: 1.5rem;
-    }
-
-    button {
-      text-transform: uppercase;
-      width: 24rem;
-    }
-
-    label {
-      font-weight: bold;
-    }
-
-    select {
-      width: 24rem;
-    }
-
-    #again {
-      text-align: center;
-    }
-
-    #credit {
-      position: absolute;
-      bottom: 0;
-      font-style: italic;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="./bidenism.css" type="text/css" rel="stylesheet" />
 </head>
 
 <body>
-  <h1>
-    Build Your Own All-Purpose Bidenism
-  </h1>
+  <main>
+    <h1>
+      Build Your Own All-Purpose Bidenism
+    </h1>
 
-  <div>
-    <label for="noun1">The first letter of your first name:</label><br />
-    <select id="noun1"></select>
-  </div>
+    <div>
+      <label for="noun1">The first letter of your first name:</label><br />
+      <select id="noun1"></select>
+    </div>
 
-  <div>
-    <label for="noun2">The first letter of your last name:</label><br />
-    <select id="noun2"></select>
-  </div>
+    <div>
+      <label for="noun2">The first letter of your last name:</label><br />
+      <select id="noun2"></select>
+    </div>
 
-  <div>
-    <label for="verb">Your astrological sign:</label><br />
-    <select id="verb"></select>
-  </div>
+    <div>
+      <label for="verb">Your astrological sign:</label><br />
+      <select id="verb"></select>
+    </div>
 
-  <div>
-    <label for="adjective">Last digit of your birth year:</label><br />
-    <select id="adjective"></select>
-  </div>
+    <div>
+      <label for="adjective">Last digit of your birth year:</label><br />
+      <select id="adjective"></select>
+    </div>
 
-  <div>
-    <label for="depressed">How depressed you are right now on a scale of 1-20. 20 is high):</label><br />
-    <select id="depressed"></select>
-  </div>
+    <div>
+      <label for="depressed">How depressed you are right now on a scale of 1-20. (20 is high):</label><br />
+      <select id="depressed"></select>
+    </div>
 
-  <div>
-    <button id="bidenize">Bidenize</button>
-  </div>
+    <div>
+      <button id="bidenize">Bidenize</button>
+    </div>
 
-  <div id="out">
-    <div id="your-bidenism"></div>
-    <button id="again">Do another one</button>
-  </div>
+    <div id="out">
+      <div id="your-bidenism"></div>
+      <button id="again">Do another one</button>
+    </div>
 
 
-  <div id="credit">
-    <p>from <a href="https://www.currentaffairs.org/2020/07/build-your-own-all-purpose-bidenism" target="_blank">
-        Build Your Own All-Purpose Bidenism
-      </a>
-      by Lyta Gold
-    </p>
-  </div>
+    <div id="credit">
+      <p>from <a href="https://www.currentaffairs.org/2020/07/build-your-own-all-purpose-bidenism" target="_blank">
+          Build Your Own All-Purpose Bidenism
+        </a>
+        by Lyta Gold
+      </p>
+    </div>
+  </main>
 
-  <script>
-    (function () {
-
-      const obj2frag = obj => {
-        const frag = document.createDocumentFragment()
-        Object.entries(obj).forEach(([k, v]) => {
-          const opt = document.createElement('option')
-          opt.value = v
-          opt.appendChild(document.createTextNode(k))
-          frag.appendChild(opt)
-        })
-        return frag
-      }
-
-      const arr2frag = (xs, f) => {
-        const frag = document.createDocumentFragment()
-        xs.forEach((v, i) => {
-          const opt = document.createElement('option')
-          opt.value = v
-          opt.appendChild(document.createTextNode(f(i)))
-          frag.appendChild(opt)
-        })
-        return frag
-      }
-
-      const nouns = {
-        A: 'milk',
-        B: 'ice cream',
-        C: 'the pool',
-        D: 'roaches',
-        E: 'kids',
-        F: 'girls',
-        G: 'the Chinese',
-        H: 'the crisis',
-        I: 'a problem',
-        J: 'a yo-yo',
-        K: 'fat',
-        L: 'socialism',
-        M: 'Corn Pop',
-        N: 'the President',
-        O: 'FDR',
-        P: 'World War II',
-        Q: 'drones',
-        R: 'a kill list',
-        S: 'war',
-        T: 'a position',
-        U: 'Amtrak',
-        V: 'Delaware',
-        W: 'some babe',
-        X: 'my son',
-        Y: 'a mistake',
-        Z: 'America'
-      }
-
-      const verbs = {
-        Aries: 'hit',
-        Taurus: 'touch',
-        Gemini: 'smell',
-        Cancer: 'sniff',
-        Leo: 'bomb',
-        Virgo: 'figure',
-        Libra: 'beef up',
-        Scorpio: 'fight',
-        Sagittarius: 'attack',
-        Capricorn: 'vote',
-        Aquarius: 'text',
-        Pisces: 'swim'
-      }
-
-      const adjectives = [
-        'great',
-        'young',
-        'pretty',
-        'clean',
-        'articulate',
-        'stupid',
-        'darn',
-        'bad',
-        'bright',
-        'good-looking'
-      ]
-
-      const garbles = [
-        'we gotta',
-        'see here Jack',
-        'it\'s malarkey',
-        'it\'s not gonna happen',
-        'it can’t happen',
-        'it won’t happen',
-        'we have to take care of the cure',
-        'no matter what',
-        '...what was that?',
-        'anyway',
-        'that’s totally different',
-        'then go vote for Trump',
-        'or uh. You know',
-        'I never heard of it',
-        'I never met her',
-        'yes ma’am',
-        'I don’t ... I don’t remember',
-        'give a shot',
-        'if we just',
-        'gotta together, we can make America, uh'
-      ]
-
-      const noun1 = document.getElementById('noun1')
-      const noun2 = document.getElementById('noun2')
-      const verb = document.getElementById('verb')
-      const adjective = document.getElementById('adjective')
-      const depressed = document.getElementById('depressed')
-      const bidenize = document.getElementById('bidenize')
-      const bidenism = document.getElementById('your-bidenism')
-      const out = document.getElementById('out')
-      const again = document.getElementById('again')
-
-      noun1.appendChild(obj2frag(nouns))
-      noun2.appendChild(obj2frag(nouns))
-      verb.appendChild(obj2frag(verbs))
-      adjective.appendChild(arr2frag(adjectives, x => x))
-      depressed.appendChild(arr2frag(garbles, x => x + 1))
-
-      const onBidenize = e => {
-        e.preventDefault()
-        bidenism.textContent = 'The thing--the thing you have to understand about America--what America needs is ' +
-          noun1.value + ', not ' + noun2.value + '. We gotta ... we gotta ' +
-          verb.value + ' this ' + adjective.value + ' issue. I’ve studied history, and you can’t forget: ' +
-          depressed.value + '.'
-        out.style.display = 'block'
-        bidenize.style.display = 'none';
-        [noun1, noun2, verb, adjective, depressed].forEach(el => el.disabled = true)
-      }
-
-      bidenize.addEventListener('click', onBidenize)
-
-      again.addEventListener('click', e => {
-        e.preventDefault()
-        window.location.reload()
-      })
-    })()
-  </script>
+  <script src="./bidenism.js"></script>
 </body>
 
 </html>
